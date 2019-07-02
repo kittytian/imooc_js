@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>innerHTML获取和设置标签之间的文本和html内容</title>
+</head>
+<body>
+    <ul id="list">
+        <li><i>前端开发</i></li>
+        <li><b>服务器端开发</b></li>
+        <li>UI设计</li>
+    </ul>
+<script>
+    /*
+    语法：ele.innerHTML
+    功能：返回ele元素开始和结束标签之间的HTML
+
+    语法：ele.innerHTML =“html”
+    功能：设置ele元素开始和结束标签之间的HTML内容为html
+     */
+    var lis =document.getElementById("list").getElementsByTagName("li");
+    for(var i=0,len=lis.length;i<len;i++){
+        console.log(lis[i].innerHTML);//输出的是 li标签之间的文本和html标签内容 <i>前端开发</i><
+        //利用innerHTML添加文本 先取出innerHTML（左边等式） 再添加
+        lis[i].innerHTML= lis[i].innerHTML + "程序";//lis[i].innerHTML+="程序"
+
+    }
+
+</script>
+
+</body>
+</html>

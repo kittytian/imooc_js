@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组重排序方法</title>
+</head>
+<body>
+<script>
+    /*
+    reverse()
+    语法：stringObject.reverse（）
+    功能：用于颠倒数组中元素的顺序(反序）
+    返回值：数组
+     */
+    var nums = [2,4,5];
+    nums.reverse();
+    console.log(nums);//[5,4,2] 原数组顺序发生改变
+    var strs =["a","b","c","d"];
+    //返回dcba这个字符串
+    console.log(strs.reverse());//返回的是数组dcba 改变原数组
+    console.log(strs.join(""));//dcba
+    /*
+    sort()
+     语法：arrayObject.sort（sortby）
+    功能：数组排序
+    返回值：排序后的数组
+    默认情况下，sort()方法按字符串升序排列数组项,sort方法会调用每个数组项的toString()方法，
+    然后比较得到的字符串排序，返回经过排序之后的数组，而原数组顺序也发生改变
+    说明：
+    1.即使数组中每一项都是数值，sort()方法比较的也是字符串
+    2.sort（）方法可以接收一个比较函数作为参数
+     */
+    var words= ["left","color","boarder"];
+    console.log(words.sort());//["boarder", "color", "left"] 按首字母排序的
+    var arr = [9,23,15,88,12];
+    console.log(arr.sort());//(5) [12, 15, 23, 88, 9] 为什么？调用tostring方法比较 所以 12 15第一位是1排到前面 9排到最后
+    //想按顺序排序：传一个匿名函数
+    //降序：
+    arr.sort(function (a,b) {
+        return b-a
+    });
+    console.log(arr);//(5) [88, 23, 15, 12, 9]从大到小降序 数组内有负值也没关系
+    //升序：
+    arr.sort(function (a,b) {
+        return a-b //从小到大排
+    });
+    console.log(arr);//[9, 12, 15, 23, 88]
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

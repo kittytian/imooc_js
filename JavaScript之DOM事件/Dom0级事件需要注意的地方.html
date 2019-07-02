@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom0级事件例子3</title>
+</head>
+<style>
+    .lock{
+        width: 140px;
+        height:30px;
+        line-height: 30px;
+        background: #00f;
+        color: #fff;
+        font-size:14px;
+        text-align: center;
+        border-radius: 10px;
+        cursor:pointer ;
+        margin-top: 30px;
+    }
+    .unlock{
+        width: 140px;
+        height:30px;
+        line-height: 30px;
+        background: #666;
+        color: #ccc;
+        font-size:14px;
+        text-align: center;
+        border-radius: 10px;
+        cursor:pointer ;
+        margin-top: 30px;
+    }
+</style>
+<body>
+<!--想按一下按钮 锁定按钮变成解锁-->
+<div class="lock" id="btn">锁定</div>
+<script>
+    var btn = document.getElementById("btn");
+    //onclick触发调自定义函数
+    function clickBtn() {
+        alert("我是按钮");
+    }
+    btn.onclick = clickBtn;
+    //千万不要加函数的括号 如果    btn.onclick = clickBtn（）;页面刷新这个函数就会被调用
+
+    /*加上括号是执行的意思，添加事件的回调函数应该就是给相应的事件属性赋值，
+      而很明显需要把一个函数赋值给这个事件属性，而不是函数的调用结果。
+      所以在js中的绑定是直接赋值。而在标签内的事件属性的值是由引号包裹的，
+      代表的是当点击该元素时，执行引号内的代码，直接把引号内的代码拿出来跑，
+      如果你不加括号，那就不会调用那个函数。*/
+
+    /*简单来说就是带括号的是执行一次函数，不带括号的函数就是一个函数对象*/
+    /*那下面这种意思就明显了，下面的这一句语句是将一个函数对象赋值给了btn.onclick
+　　 */
+
+    // btn.onclick = function(){alert("DOM0级事件处理111");}
+</script>
+
+</body>
+</html>

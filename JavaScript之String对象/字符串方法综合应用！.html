@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串方法综合应用</title>
+</head>
+<body>
+<script>
+    //编写js函数 用于获得输入参数的后缀名，比如输入abc.txt返回.txt(获取文件扩展名）
+    var url = "http://baidu.com//abc.txt";
+    function getFileFormat(url) {
+        //获取.在url参数中的位置
+        //var pos = url.indexOf("."); 不用indexOf是因为前面可能也有. 要找最后一个出现.的位置
+        var pos = url.lastIndexOf(".");
+        return url.substr(pos);//不要. 就pos+1
+    }
+    var formatName = getFileFormat(url);
+    var picFormat = getFileFormat("12345.jpg");
+    console.log(formatName);
+    console.log(picFormat);
+</script>
+
+</body>
+</html>

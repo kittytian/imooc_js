@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch输出星期</title>
+</head>
+<body>
+<script>
+    //获取星期 new Date（）.getDay() 返回值：number（0-6））星期日返回的是0 希望所有星期不显示数字 所以要switch case判断
+    //document.write(“内容”) 功能：向浏览器输出内容
+    var week = new Date().getDay();
+    console.log(week);//返回的 4
+    //多条件判断 switch语句（超过3种可能性）
+    switch(week){
+        case 0: //week = 0 成立 才能执行这段脚本
+            document.write("今天是星期日");
+            break;//退出
+        case 1: //week = 0 成立 才能执行这段脚本
+            document.write("今天是星期一");
+            break;//退出
+        case 2: //week = 0 成立 才能执行这段脚本
+            document.write("今天是星期二");
+            break;//退出
+        case 3: //week = 0 成立 才能执行这段脚本
+            document.write("今天是星期三");
+            break;//退出
+        case 4: //week = 0 成立 才能执行这段脚本
+            document.write("今天是星期四");
+            break;//退出
+        case 5: //week = 0 成立 才能执行这段脚本
+            document.write("今天是星期五");
+            break;//退出
+        // case 6: 用default替换case 6 前面5种不执行 执行default最后一段脚本 写default 就不用break了
+        //     document.write("今天是星期六");
+        //     break;
+        default://week的值不是以上case 中的0-5
+            document.write("今天星期六");
+    }
+
+</script>
+</body>
+</html>

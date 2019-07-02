@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串对象的截取方法：slice（） substring（）substr（）</title>
+</head>
+<body>
+<script>
+    /*
+    字符串对象的截取方法：slice（） substring（）substr（）
+    slice（）：
+    语法：StringObject.slice（start,end）
+    功能：截取子字符串
+    参数说明：
+    start:必需参数 指定子字符串的开始位置
+    end：可选参数 表示子字符串到哪里结束 end本身不在截取范围之内 省略时截取至字符串末尾
+     */
+    var str ="Hello World";
+    console.log(str.slice(7,10));//截取orl
+    console.log(str.slice(1));//ello World
+    console.log(str.length);
+    console.log(str.slice(-7,-2));//加字符串长度11-7=4 11-2=9 截取到 9 结果为o  Wor
+  /*
+  substring()语法和功能和slice一样
+  和slice的区别：
+  1.当参数为负数时，自动将参数转换为0
+  2.substring()会将较小的数作为开始位置，将较大的数作为结束位置
+   */
+    console.log(str.substring(1,4));//ell
+    console.log(str.substring(-7,5));//Hello ->从索引为0到5
+    console.log(str.substring(-4,-7));//为空字符串 ->（0，0）
+    console.log(str.substring(2,-5));//He 自动转换 起始位置为0 结束为2
+    /*
+   substr（）：
+   语法：StringObject.substr（start,len）
+   功能：截取子字符串
+   参数说明：
+   1.start:必需参数 指定子字符串的开始位置
+   2.len：可选参数 表示截取的总字符数 省略时截取至字符串末尾
+   3.当start为负数时，会将传入的负值与字符串的长度相加
+   4.当len为负数时 返回空字符串
+    */
+    console.log(str.substr(6,3));//Wor 等价于 str.substring(6,9)
+    console.log(str.substr(-5,4));//Worl 等价从11-5=6 截取4位
+    console.log(str.substr(3,-4));//空字符串
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>indexOf()和lastIndexOf()</title>
+</head>
+<body>
+<script>
+    /*indexOf()
+     语法：stringObject.indexOf("o")//参数是个字符
+     功能：从一个字符串中搜索给定的字符串 返回子字符串的位置
+     返回值：数值
+     说明：
+     如果没有找到该子字符串 返回 -1
+     从左边向右边查找
+      */
+    var email = "marry@163.com";
+    console.log(email.indexOf("@"));// 检测@在email中出现的位置
+    console.log(email.indexOf("z"));// -1
+    console.log(email.indexOf("m"));// 0 只检测第一次出现的位置
+    console.log(email.indexOf("rr"));// 2 返回的是第一个r的位置
+    //lastIndexOf（）从右边查找
+    console.log(email.lastIndexOf("."));// 9 最后一个.
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数定义和调用</title>
+</head>
+<body>
+<script>
+    //声明一个没有参数的函数 函数和参数命名不能以数字开头 按标识符命名规则
+    //函数把经常使用的脚本封装在一起
+    function myFun() {
+        alert("我是一个函数");
+    }
+    //函数的调用
+    myFun();
+    
+    //声明一个带参数的函数
+    function add(num1,num2) {
+        var sum = num1 + num2;
+        alert(num1+'和'+num2+'的和是'+sum);
+    }
+    //调用add函数
+    add(3,5);//对应函数的num1，num2参数
+    add(99,789);
+    add(-1,-9);
+
+</script>
+</body>
+</html>

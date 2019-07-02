@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组的转换方法</title>
+</head>
+<body>
+<script>
+    /*
+    join
+    语法：arrayObject.join（separator）分割符
+    功能：把数组中所有元素放入一个字符串（转换为字符串）
+    返回值：字符串string
+     */
+    var numbers =[2,4,5];
+    var str = numbers.join();//无参数 默认,隔开 控制台结果为2，4，5
+    console.log(str);//必须得存到变量里 打印
+    console.log(typeof str);
+    //加入分隔符转换字符串
+    var words = ["a","b","c"];
+    word= words.join("-");
+    //word= words.join("");//打印abc 不隔开 连起来
+    console.log(word);//a-b-c
+    console.log(words);
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>splice()删除插入替换</title>
+</head>
+<body>
+<script>
+    /*
+    splice删除
+    语法：arrayObject.splice(index,count)
+    功能：删除从index处0个或多个元素
+    返回值：含有被删除的元素的数组
+    说明：
+    count是要删除的项目数量 如果设置为0 则不会删除项目
+    如果不设置 则删除从index开始的所有值
+     */
+    var arr = ["a","b","c","d","e"];
+    var delarr = arr.splice(2,2);
+    console.log(delarr);//删除 c d
+    console.log(arr);//原数组剩下 a b e
+
+    var arr1 = ["a","b","c","d","e","f"];
+    var delarr1 = arr1.splice(2);//删除c之后所有值
+    console.log(delarr1);//c d e f
+    console.log(arr1);//a b
+
+    var arr2 = ["a","b","c","d","e","f"];
+    var delarr2 = arr2.splice(2,0);//count = 0 不删除
+    console.log(delarr2);//[]
+    console.log(arr2);//["a", "b", "c", "d", "e", "f"]
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

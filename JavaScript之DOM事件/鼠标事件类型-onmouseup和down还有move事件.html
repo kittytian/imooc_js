@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">拖动</div>
+    <script>
+    /*
+    onmousemove:在鼠标指针移动时发生
+    onmousedown:鼠标按钮在元素上按下触发
+    onmouseup:在元素上松开鼠标按钮时触发
+    onclick：鼠标点击时触发
+    以下例子执行顺序：鼠标进入div onmousemove -> 鼠标点击 先onmousedown ->点击松开 on、mouseup和onclick同时
+     可以理解为 onmousedown和onmouseup成就了onclick事件
+     */
+    var box = document.getElementById("box");
+    //绑定按下的事件
+    box.onmousedown = function () {
+        console.log("我被按下了");
+    };
+    //绑定移动的事件
+    box.onmousemove = function () {
+        console.log("我被移动了");//鼠标在div盒子上移动就会一直打印
+    };
+    //绑定松开的事件
+    box.onmouseup = function () {
+        console.log("我被松开了");
+    };
+    //绑定点击的事件
+    box.onclick = function () {
+        console.log("我被点击了");
+    };
+    </script>
+</body>
+</html>

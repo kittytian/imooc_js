@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置元素样式</title>
+</head>
+<body>
+    <div class="box" id="box">
+     元素1
+    </div>
+    <ul id="list">
+        <li>前端开发</li>
+        <li>服务器端开发</li>
+        <li>UI设计</li>
+        <li>UI设计</li>
+        <li>UI设计</li>
+    </ul>
+<script>
+    /*
+    语法：ele.style.styleName = styleValue
+    功能：设置ele元素的css样式
+    说明：
+    1.ele为要设置样式的Dom对象
+    2.styleName 为要设置的样式名称——驼峰形式命名 属性是-连接的 如font-weight 要写成fontWeight
+    3.styleValue为设置的样式值
+     */
+    var box = document.getElementById("box");
+    box.style.color ="red";//文字变成红色
+    box.style.fontWeight = "bold";//粗体
+    //设置li不同背景色
+    var lis = document.getElementById("list").getElementsByTagName("li");//返回的是lis数组！一定要记住 不是dom对象 没有style属性！ 不能写成 lis.style.color ="blue";
+    //所以要遍历数组中的每一个li设置 要想办法取到dom对象 数组遍历索引出来 才能设置
+    // for(var i=0,len=lis.length;i<len;i++){
+    //     console.log(lis[i]);
+    //     lis[i].style.color ="blue";
+    // }
+    //条件判断 设置每个li的背景颜色
+    for(var i=0,len=lis.length;i<len;i++){
+        lis[i].style.color ="#f00";
+        if(i==0){
+            lis[i].style.backgroundColor ="#ccc";
+        }else if(i==1){
+            lis[i].style.backgroundColor ="#666";
+        }else if(i==2){
+            lis[i].style.backgroundColor ="#999";
+        }else{
+            lis[i].style.backgroundColor ="#333";
+        }
+    }
+</script>
+</body>
+</html>

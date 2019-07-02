@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>求任意一组数平均值</title>
+</head>
+<body>
+<script>
+    //arguments的参数个数不固定 arguments的length属性返回参数的个数（类型number）
+    function getAvg(num1,num2) {
+       // var sum = 0;
+       // var len = arguments.length;
+       // var i; //记得要声明！！或者在for（var i=0；）
+        var sum=0,len=arguments.length,i;
+       for(i=0;i<len;i++){
+           sum += arguments[i];
+       }
+       return sum/len;
+
+
+    }
+    var avg = getAvg(1,2,3,4);
+    document.write(avg);
+</script>
+
+</body>
+</html>

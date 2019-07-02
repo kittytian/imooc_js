@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实现b对a数组的拷贝</title>
+</head>
+<body>
+<script>
+    //实现b数组对a数组的拷贝
+    var a = [1,"yes",3],
+        b;//b这个变量是undefined
+    //方法一 数组遍历用push 比较麻烦
+    b = new Array();//必须定义b是数组 才能遍历 push
+    for(var i = 0;i<a.length;i++){
+        b.push(a[i]);
+    }
+    console.log(b);
+
+    //方法二 用concat
+    b = [].concat(a);//[]空数组连a concat是数组对象的方法
+
+    //方法三 slice
+    b = a.slice(0);//从索引为0截取到最后
+
+
+
+</script>
+
+</body>
+</html>

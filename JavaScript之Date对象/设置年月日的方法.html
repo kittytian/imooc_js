@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置年月日时分秒的方法</title>
+</head>
+<body>
+<script>
+    //get改成set 创建一个日期对象
+    var today = new Date();
+    today.setFullYear(2017);
+    console.log(today);//Mon Jun 19 2017 15:48:10 GMT+0800 (中国标准时间)
+    console.log(today.getFullYear());//2017
+    today.setMonth(13);
+    console.log(today.getMonth());//1 自动容错能力 参数以12为基数 浏览器显示：参数/12 取余数 实际月份：（参数/12 取余数 ）+1 实际年份：（参数/12 取整）+当前年份
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组长度及数组遍历</title>
+</head>
+<body>
+<script>
+    /*
+    array.length 返回数组的长度 （number类型）
+     */
+    var arr =["a","b","c","d"];
+    console.log(arr.length);//4
+    //可通过设置length移除末尾的值 但是不建议这个做法 或向数组中添加新项
+    arr.length =3;//截取d
+    console.log(arr[3]);//undefined
+    //长度值=最后一项索引+1
+    arr[99] = "z";//给数组第100项放z
+    console.log(arr.length);//最后一个索引99 长度为100
+    /*
+    数组遍历 用for循环
+     */
+    for(var i= 0;i<arr.length;i++){
+        console.log(arr[i]);
+    }
+
+
+</script>
+
+</body>
+</html>

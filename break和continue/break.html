@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Break</title>
+</head>
+<body>
+<script>
+    //break立即退出循环 if语句不执行
+    var num =0;
+    for(var i=1;i<10;i++){
+        //如果i是5的倍数 循环立即退出
+        if(i%5==0){
+            break;
+        }
+        document.write(i);//1 2 3 4
+        num++;
+    }
+    document.write('<br/>'+num);
+
+    for(var s =0,j=1;j<=10;j++){
+        if(j%5==0){
+            break;
+        }
+        s+=j;
+        //j=1,s=1;j=2,s=3;j=3,s=6;j=4,s=10 j=5循环退出 s仍为10
+    }
+    document.write('<br/>'+s);
+
+</script>
+
+</body>
+</html>

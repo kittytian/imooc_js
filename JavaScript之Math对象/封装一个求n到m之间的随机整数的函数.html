@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math.random()</title>
+</head>
+<body>
+<script>
+    /*
+    语法：Math.random()
+    功能：返回大于等于0小于1的一个随机数
+    返回值：Number
+    说明：
+    求n到m之间随机整数的公式：
+    random = Math.floor(Math.random()*（m-n+1）+ n );
+    解释：random = Math.floor(Math.random()*随机数个数+ 开始值 ); floor向下取整
+     */
+    var random = Math.random();
+    console.log(random);//每次刷新都不一样的值
+    //生成一个n到m之间随机整数
+    function getRandom(n,m) {
+        //return Math.floor(Math.random()*(m-n+1)+n);
+        var choice = m-n+1;
+        return Math.floor(Math.random()*choice+n);
+    }
+    var random1 = getRandom(2,6);
+    var random2 = getRandom(10,60);
+    console.log(random1);
+    console.log(random2);
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>continue</title>
+</head>
+<body>
+<script>
+    //continue退出循环 只退出这一次
+    var num =0;
+    for(var i=1;i<10;i++){
+        //如果i是5的倍数 循环立即退出
+        if(i%5==0){
+            continue;
+        }
+        document.write(i);//1 2 3 4 6 7 8 9
+        num++;//i=1,num=1;i=2,num=2;i=3,num=3,i=4,num=4,i=6,num=5 所以最后打印的num=8
+    }
+    document.write('<br/>'+num);
+
+    for(var s =0,j=1;j<=10;j++){
+        if(j%5==0){
+            continue;
+        }
+        s+=j;
+        //j=1,s=1;j=2,s=3;j=3,s=6;j=4,s=10 j=5结束这次循环 j=6 s=16;j=7,s=23;j=8,s=31;j=9,s=40;j=10这次循环不执行
+    }
+    document.write('<br/>'+s);
+</script>
+
+</body>
+</html>

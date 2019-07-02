@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onchange事件</title>
+    <script>
+        //script写在head里面 所以要绑定页面加载的事件 onload
+        window.onload = init;//页面加载调用init函数 也可以用匿名函数 不要写括号
+        //初始化init函数
+        function init() {
+            //第一步：获取下拉菜单
+            var menu = document.getElementById("menu");
+            //第二步：给下拉菜单绑定onchange事件 选择下拉菜单内容改变就会触发该事件
+            menu.onchange = function () {
+                //console.log("abc");
+             //第三步：获取当前下拉菜单中选中的值 改变背景色
+                // 方法一：this是对dom元素的引用 this value
+                // var bgcolor = this.value;
+                // console.log(bgcolor);
+               //方法二：
+                var  bgcolor = menu.options[menu.selectedIndex].value;//.value是option value .text是选项中的文本
+                console.log(bgcolor);
+                console.log(menu.options[menu.selectedIndex].text);
+                //第一种写法//取到值之后判断是否为空：
+                // if(bgcolor=="")return;//阻止脚本运行 //函数那章节return不带任何返回值->提前停止函数执行又不需要返回值
+                // //否则设置body背景色
+                // document.body.style.background = bgcolor;
+                //上面的改进 取到“请选择” 背景变为白色 否则是选择的颜色
+                if(bgcolor == ""){
+                    document.body.style.background = "#fff";
+                }else{
+                    document.body.style.background = bgcolor;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<!--用户选了什么颜色背景色就变成什么 下拉菜单先给个空 默认值 option第一个
+//onchange一般用于select表单元素 HTML5新属性 或者作用于单选按钮<input type="radio">/复选框<input type="checkbox">-->
+    <div class="box">
+        请选择您喜欢的背景色：
+        <select name="" id="menu">
+            <option value="">请选择</option>
+            <option value="#f00">红色</option>
+            <option value="#0f0">绿色</option>
+            <option value="#00f">蓝色</option>
+            <option value="#ff0">黄色</option>
+            <option value="#ccc">灰色</option>
+        </select>
+    </div>
+<script>
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建数组以及数组元素的读写</title>
+</head>
+<body>
+<script>
+    /*
+    创建数组的方式:
+    1.使用array构造函数 语法：new Array（）
+    小括号如new Array（10）该数组保存10个
+     */
+    var colors = new Array(3);//数组长度length为3
+   // var colors = new Array(); 没有参数 声明一个空数组 长度为0
+    console.log(colors);
+    var nums = new Array(1,3,6,9);//数组长度为4 0：1，1：3，2：6，3：9；直接把值传进去
+    console.log(nums);
+    /*
+   创建数组的方式:
+   2.使用使用数组字面量是创建数组
+   在[]中数组元素用，隔开
+    */
+    var cols=["red","yellow","blue"];
+    console.log(cols);
+    //javascript数组的每一项可以保存任何类型的数据
+    var infos = [6,"marry",true,{email:"abc@qq.com"}];//最后一项是object对象
+    console.log(infos);
+    /*
+    读取值 使用[]进行索引 从0开始的正整数
+    给数组设置值 也可用方括号索引的形式
+     */
+    console.log(cols[1]);//取出cols数组中的索引为1的值-yellow
+    console.log(cols[5]);//取不到的值 打印undefined
+    //利用索引给前面colors空数组赋值
+    colors[0] ="#f00";
+    colors[1] = "#0f0";
+    colors[2] = "#00f";
+    console.log(colors);
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>将带有分割符的字符串转换为驼峰的形式</title>
+</head>
+<body>
+<script>
+    function camelback(str) {
+        var arr = str.split("-"),newStr = arr[0];
+        for(var i =1,len= arr.length;i<len;i++){
+            newStr+= arr[i].charAt(0).toUpperCase()+ arr[i].substr(1);
+        }
+        return newStr;
+    }
+    var camelFormat = camelback("border-top-left");
+    console.log(camelFormat);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>charAt()和charCodeAt()</title>
+</head>
+<body>
+<script>
+    /*
+    charAt()
+    语法：stringObject.charAt（index）
+    功能：返回stringObject中index位置的字符
+
+    charCodeAt()
+     语法：stringObject.charCodeAt（index）
+    功能：返回stringObject中index位置的字符编码
+
+    说明：
+    es5中可使用“方括号加字符索引”来访问字符串中特定字符 但是IE7或更早的浏览器会返回undefined
+     */
+    var str ="hello world";//想取出字母e
+    console.log(str[1]);//方括号[]加字符索引
+    //为了兼容以前的浏览器版本 用charAt（）
+    console.log(str.charAt(0));//h
+    console.log(str.charAt(15));//取不到返回空
+
+    console.log(str.charCodeAt(4));//111 是o的编码
+
+
+
+
+</script>
+
+</body>
+</html>

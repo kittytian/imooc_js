@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>从10到100之间随机生成10个整数，存入一个数组内并重排序</title>
+</head>
+<body>
+<script>
+    var nums =[];//声明空数组
+    function getRandom(n,m) {
+        return Math.floor(Math.random()*(m-n+1)+n);
+    }
+    //for循环随机生成10个数 并push存入数组
+    for(var i =0;i<10;i++){
+        num1 = getRandom(10,100);
+        nums.push(num1);
+    }
+    console.log(nums);
+    console.log(nums.sort(function (a,b) {
+        return a-b;
+    }));
+</script>
+
+</body>
+</html>

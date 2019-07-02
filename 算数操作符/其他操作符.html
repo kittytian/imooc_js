@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>其他操作符</title>
+</head>
+<body>
+<script>
+    var a =10,
+        b =20;
+    //复合赋值
+    a+=5;//a = a +5
+    b%=4;//对4取余数
+    console.log(b);
+    var str ="hello";
+    str+= "world";//str = str +"world"; + 连接字符串 （或者变量连接）
+    console.log(str);
+    //比较操作符
+    console.log(a>b);//true
+
+    var x=10,
+        y="10",
+        z=x==y,//==只比较值相等
+        n=x!=y;//只比较值
+    console.log(z);//true z=x===y 三个等号===比较值和变量类型 返回false
+    console.log(n);//false n=!==y(x全不等于y)返回true 比较值和变量类型
+    console.log(null==undefined);//true
+    console.log(null===undefined);//false
+
+    //三元操作符 语法：条件？执行代码1：执行代码2 可代替简单的if语句 如果条件成立 执行代码1 否则执行代码2
+    var score=85;
+    var result=(score>=60)?"及格":"不及格";
+
+    console.log(result);
+
+
+
+
+
+</script>
+</body>
+</html>

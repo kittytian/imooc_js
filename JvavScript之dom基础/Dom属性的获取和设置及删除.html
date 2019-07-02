@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom获取属性和设置属性</title>
+</head>
+<body>
+    <p id="text" class="text2" align="center" data-type="title">文本 自定义属性data-*</p>
+    <input  type="text" name="user" value="user" id="user" validate ="true">
+<script>
+    /*
+    语法：ele.getAttribute("attribute");
+    功能：获取ele元素的attribute"属性
+    说明：
+    1.ele是要操作的dom对象
+    2.attribute是要获取的html属性（如id，type）
+     */
+    var p = document.getElementById("text");
+    console.log(p.id);//获取标签属性语法：Don对象.属性 如p.id
+    console.log(p.align);//id和align是p标签自带的属性
+    //console.log(p.class);//undefined class属性不能这种方式获取
+    console.log(p.className);//获取类名必须是className
+    console.log(p.getAttribute("data-type"));
+    console.log(p.getAttribute("class"));
+    //取input user属性
+    var user = document.getElementById("user");
+    console.log(user.type);
+    console.log(user.name);
+    console.log(user.value);
+    console.log(user.getAttribute("validate"));//取出自己定义的属性 validate
+    //设置属性：
+    /*
+     语法：ele.setAttribute("attribute",value); 必须有两个参数 ：value是字符串，必须加引号 有兼容性问题
+    功能：获取ele元素上设置属性
+    说明：
+    1.ele是要操作的dom对象
+    2.attribute是要获取的html属性（如id，type）
+    3.value为设置的attribute属性值
+     */
+    //给p标签设置一个data-color的属性
+    p.setAttribute("data-color","red");
+    //给input设置一个isRead的属性
+    user.setAttribute("isRead","false");
+
+    //删除属性
+    /*
+  语法：ele.removeAttribute("attribute”);
+ 功能：删除ele元素上的attribute属性
+ 说明：
+ 1.ele是要操作的dom对象
+ 2.attribute是要删除的属性名称
+  */
+    // 删除p上的align属性
+    p.removeAttribute("align");//文本从居中到靠左对齐
+
+
+
+
+
+</script>
+
+</body>
+</html>

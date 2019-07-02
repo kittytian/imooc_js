@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math对象的方法</title>
+</head>
+<body>
+<script>
+    //这些函数都涉及到Number()隐式类型转换。若超出范围，将返回NaN
+    //Math.min(num1..numN) 求一组数中的最小值 返回值Number
+    //Math.max(num1..numN) 求一组数中的最大值 返回值Number
+    var min =Math.min(5,-4,0,108,-55);
+    console.log(min);
+    var max =Math.max(5,-4,0,108,-55,"ABC");
+    //var max =Math.max();
+    console.log(max);//NaN 这组数出现一个非数字 就返回NaN 没有参数则返回-Infinity
+
+    //Math.ceil(num) 向上取整 返回大于num值的最小整数 返回值Number
+    var num = 189.99;
+    var int1 =Math.ceil(num);
+    console.log(int1);//190
+    //Math.floor(num) 向下取整 返回num的整数部分 返回值Number
+    var int2 = Math.floor(num);
+    console.log(int2);//189
+    //Math.round(num) 将数值四舍五入为最接近的整数 返回值Number
+    var int3 = Math.round(num);
+    console.log(int3);//190
+    console.log(Math.round(189.55));//190
+    console.log(Math.round(189.09));//189
+
+    //Math.abs(num) 返回num的绝对值 返回值Number
+    console.log(Math.abs(-189.09));//189.09
+
+
+
+
+</script>
+
+</body>
+</html>

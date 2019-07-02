@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML事件</title>
+    <style>
+        .btn{
+            width: 140px;
+            height:30px;
+            line-height: 30px;
+            background: #00f;
+            color: #fff;
+            font-size:14px;
+            text-align: center;
+            border-radius: 10px;
+            cursor:pointer ;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="button" value="弹出" onclick="alert('我是按钮')">
+    <!--鼠标划过按钮时调用mouseoverFn的函数 事件=“函数” 函数在script中定义 触发事件 在函数中写个this-->
+    <div id="btn" class="btn" onmouseover="mouseoverFn(this)" onmouseout="mouseoutFn(this)">开始</div>
+
+<script>
+
+    function mouseoverFn(btn) {
+        //鼠标划过按钮时 按钮的背景变为红色 所以要先取到按钮
+        console.log(btn);//打印出div 说明this就是对该div引用
+        btn.style.background="red";//设置样式
+    }
+    function mouseoutFn(btn) {
+        //鼠标离开 又变成蓝色
+        btn.style.background ="blue";
+
+    }
+    /*
+    HTML事件
+    语法：<tag 事件=“执行脚本” ></tag>
+    功能:在HTML元素上绑定事件
+    说明：执行脚本可以是JS代码 也可以是一个函数的调用（）
+
+    鼠标事件：onclick-鼠标点击时触发 例子1.在input按钮上绑定click点击事件
+    2.在div 上绑定 onmouseover 鼠标划过时触发 调用函数
+                  onmouseout 鼠标离开时触发
+
+    3.关于this指向问题： 在定义mouseoverFn（）时候 要先取到按钮 不需要document.getElementById（）
+    在事件触发的函数中 this是对该Dom对象的引用
+     */
+
+
+</script>
+
+</body>
+</html>

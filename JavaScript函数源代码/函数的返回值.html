@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数的返回值return</title>
+</head>
+<body>
+<script>
+    //求和 返回值
+    function add(num1,num2) {
+        var sum = num1+num2;
+        return sum;
+    }
+    console.log(add(4,6));//打印出返回的结果
+    alert(add(88,10));
+    //把返回值存到变量s里面
+    var s = add(5,10);
+    document.write(s);
+    
+    //return不一定带值
+    function myfun(arg) {
+        //如果arg是非数字 不做任何操作 否则返回arg的2倍
+        if (isNaN(arg)) return;//return不带任何返回值->提前停止函数执行又不需要返回值
+        return 2*arg;
+
+    }
+    console.log(myfun("abc"));//打印出的结果是 undefined
+    console.log(myfun(40));//返回80 执行后面的 return 2*arg;脚本
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js放在head里面</title>
+    <script>
+        //获取box 绑定事件 这样会报错：Uncaught TypeError: Cannot set property 'onclick' of null
+        //原因：不能设置onclick属性 因为是空的 说明是box.onclick = clicked;
+        //说明box 这个dom对象有问题
+        var box = document.getElementById("box");
+        var clicked = function (){
+            alert("我被点击了");
+        };
+        box.onclick = clicked;
+        /*
+        错误原因：
+        执行顺序是从上到下(head->body）执行的：
+            当浏览器解析到head标签里的script时就会执行script脚本 获取id为box的元素 然而并没有找到id为box的元素 所以为空
+            浏览器解析到后面的div才能拿到id为box的元素
+            所以这段script脚本要放在div之后
+         */
+    </script>
+</head>
+<body>
+    <div id="box">这是一个div</div>
+<script>
+    //onload：页面加载时触发
+
+</script>
+
+</body>
+</html>

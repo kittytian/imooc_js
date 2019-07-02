@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onfocus</title>
+    <style>
+        .box{
+            padding: 50px;
+        }
+         /*  类名别忘了用逗号隔开 */
+        .left,.tip{
+            float:left;
+        }
+        .left{
+            margin-right: 10px;
+        }
+        /*tip提示刚开始不出现 display：none*/
+        .tip{
+            display: none;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        // onfocus:获得焦点时触发 onfocus事件用于：input type为text password 以及textarea多行文本框
+        //onblur:失去焦点时触发
+        window.onload = function () {
+            //步骤如下：1.获取文本框和提示框
+            var phone = document.getElementById("phone"),
+                tip = document.getElementById("tip");
+            // 2.给文本框绑定激活的事件
+            phone.onfocus = function () {
+               // alert("hello");
+                //3.显示tip里的内容
+                tip.style.display = 'block';
+            }
+
+            //给文本框绑定失去焦点的事件 做判断：是11位数字 显示✔️图片 否则✘图片
+            phone.onblur = function () {
+                //1.获取文本框的值
+                //console.log(this); 记得用this （在事件function中就是对dom元素的引用））得到的是input
+                var phoneVal = this.value;//value用于获取表单元素的值
+                console.log(phoneVal);
+                //2.判断手机号码是否为11位数字（字符串长度用length获取）判断非数字：isNaN
+                //如果输入正确 显示对号图标 否则显示错号图标 利用innerHTML更改元素中的内容
+                if(phoneVal.length==11 && isNaN(phoneVal)== false){
+                    console.log("ok");
+                    tip.innerHTML = '<img src ="img/right.png">';
+                }else{
+                    console.log("error");
+                    tip.innerHTML = '<img src ="img/error.png">';
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="left">
+            <!-- HTML 5 <input> placeholder 属性
+            placeholder 属性提供可描述输入字段预期值的提示信息（hint）。
+            该提示会在输入字段为空时显示，并会在字段获得焦点时消失。
+            注释：placeholder 属性适用于以下的 <input> 类型：text, search, url, telephone, email 以及 password。
+            -->
+            <input type="text" id="phone" placeholder="请输入手机号码">
+        </div>
+        <div class="tip" id="tip">
+            请输入有效的手机号码（本例子中只验证11位数字 应该用正则表达式）
+        </div>
+    </div>
+<script>
+
+</script>
+
+</body>
+</html>

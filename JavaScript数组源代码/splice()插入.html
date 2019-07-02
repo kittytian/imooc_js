@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>splice()插入</title>
+</head>
+<body>
+<script>
+    /*
+  splice插入
+  语法：arrayObject.splice(index,0,item1,...itemX)
+  功能：在指定位置插入值
+  参数：
+  Index:起始位置
+  0：要删除的项数
+  item1...itemX：要插入的项
+  返回值：数组
+  说明：
+  count是要删除的项目数量 如果设置为0 则不会删除项目
+  如果不设置 则删除从index开始的所有值
+
+  注意：splice（）返回一个由删除元素组成的数组 如果没有删除元素就会返回一个空数组
+   */
+    var arr = ["a","b","c","d","e","f"];
+    var insertarr = arr.splice(3,0,"m","n");//写2的话 插入后在c的前面 想在c的后面插入 index为3
+    console.log(arr);//["a", "b", "c", "m", "n", "d", "e", "f"]
+    console.log(insertarr);//[]
+</script>
+
+</body>
+</html>

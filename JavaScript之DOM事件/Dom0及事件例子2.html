@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom0及事件例子2</title>
+</head>
+<style>
+    .lock{
+        width: 140px;
+        height:30px;
+        line-height: 30px;
+        background: #00f;
+        color: #fff;
+        font-size:14px;
+        text-align: center;
+        border-radius: 10px;
+        cursor:pointer ;
+        margin-top: 30px;
+    }
+    .unlock{
+        width: 140px;
+        height:30px;
+        line-height: 30px;
+        background: #666;
+        color: #ccc;
+        font-size:14px;
+        text-align: center;
+        border-radius: 10px;
+        cursor:pointer ;
+        margin-top: 30px;
+    }
+</style>
+<body>
+    <!--想按一下按钮 锁定按钮变成解锁-->
+    <div class="lock" id="btn">锁定</div>
+<script>
+    var btn = document.getElementById("btn");
+    //下面想在onclick时候做一个判断：如果按钮是锁定，则显示为解锁，变为灰色，否则显示为锁定，变为蓝色
+    //判断方法：判断div里面的class 或者 innerHTML知道按钮是锁定还是解锁 方法一：判断classname
+    // btn.onclick = function () {
+    //     if(this.className == "lock"){
+    //         this.className = "unlock";
+    //         this.innerHTML = "解锁";
+    //     }else{
+    //         this.className = "lock";
+    //         this.innerHTML = "锁定";
+    //     }
+    // }
+    //方法二 判断innerHTML
+    btn.onclick = function () {
+        if(this.innerHTML == "锁定"){
+            this.className = "unlock";
+            this.innerHTML = "解锁";
+        }else{
+            this.className = "lock";
+            this.innerHTML = "锁定";
+        }
+    }
+</script>
+
+</body>
+</html>

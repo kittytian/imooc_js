@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>50天之后是星期几</title>
+</head>
+<body>
+<script>
+    var today = new Date();
+    //第一种做法
+    //today.setDate(today.getDate()+50);//传入当前的天加50 getDate返回月份中的天数
+    //console.log(today.getDay());
+    //第二种做法：
+    var year = today.getFullYear();//先取出现在的年月日
+    var month = today.getMonth();
+    var day = today.getDate();
+    var week = ['日','一','二','三','四','五','六'];
+    var temp = new Date(year,month,day+50);//目标日期对象temp 当前天数加50 时分秒没有传 想设置3个月之后就month+3
+    console.log("50天之后的今天是："+temp.getFullYear()+'年'+(temp.getMonth()+1)+'月'+temp.getDate()+'日'+"星期"+week[temp.getDay()]);
+    //别忘了月份加1
+
+</script>
+
+</body>
+</html>

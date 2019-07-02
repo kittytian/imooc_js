@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for嵌套循环</title>
+</head>
+<body>
+<script>
+    /*
+    循环嵌套执行规则：
+    1.外层循环条件为假 整个循环不执行
+    2，外层为真 按顺序执行 先执行外层 再执行内层循环 直到内层循环为假跳出内层循环 再返回外层执行
+     */
+    for(var i=1;i<=3;i++){
+        document.write(i+'<br/>');
+        document.write('<br>');
+        for(var j=1;j<=5;j++){
+            document.write(j+'<br/>');
+        }
+        document.write('<br>');
+    }
+</script>
+
+</body>
+</html>

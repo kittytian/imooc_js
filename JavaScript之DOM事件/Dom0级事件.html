@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom0级事件</title>
+    <style>
+        .lock{
+            width: 140px;
+            height:30px;
+            line-height: 30px;
+            background: #00f;
+            color: #fff;
+            font-size:14px;
+            text-align: center;
+            border-radius: 10px;
+            cursor:pointer ;
+            margin-top: 30px;
+        }
+        .unlock{
+            width: 140px;
+            height:30px;
+            line-height: 30px;
+            background: #666;
+            color: #ccc;
+            font-size:14px;
+            text-align: center;
+            border-radius: 10px;
+            cursor:pointer ;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!--想按一下按钮 锁定按钮变成解锁-->
+    <div class="lock" id="btn">锁定</div>
+<script>
+    /*
+    DOMO级事件
+    语法：ele.事件=执行脚本
+    功能:在DOM对象上绑定事件
+    说明：执行脚本可以是一个匿名函数 也可以是一个函数的调用
+*/
+    //获取按钮（找到DOM元素）
+    var btn = document.getElementById("btn");
+    //给按钮绑定点击事件，this是对该DOM元素的引用
+    btn.onclick = function () {
+        console.log(this);//this指向div
+        //点击时候改变dom元素的类：
+        this.className = "unlock";
+        //点击改变按钮文字：innerHTML改变内容
+        this.innerHTML = "解锁";
+    }//在DOM对象上绑定事件 右边可以是一个匿名函数
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

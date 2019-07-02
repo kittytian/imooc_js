@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom查找方法</title>
+</head>
+<body>
+    <div class ="box" id="box">
+        元素
+    </div>
+    <ul id="list1">
+        <li>前端开发</li>
+        <li>服务端开发</li>
+        <li>UI设计</li>
+    </ul>
+    <ol>
+        <li>js原生</li>
+        <li>js框架</li>
+    </ol>
+<script>
+    //document.getElementById()和document.getElementsByTagName()
+    /*
+    语法：document.getElementById(“id”)；
+    功能：返回对拥有指定ID的第一个对象的引用 （id必须符合独一无二的规范 写代码的时候不能出现重复id）
+    返回值：Dom对象
+    说明：id为Dom元素上id属性的值
+     */
+    //获取id为box的元素
+    var box = document.getElementById("box");
+    console.log(box);//打印出 <div class="box" id="box">元素</div> 如果没有相应id 返回null
+    /*
+      语法：document.getElementsByTagName(“tag”)； 注意一下是elements
+      功能：返回一个对所有tag标签引用的集合
+      返回值：数组
+      说明：tag为要获取的标签名称 如写“a”标签就是获取所有的超链接
+       */
+    //获取页面中所有li：
+    var lis = document.getElementsByTagName("li");//获取整个页面（document）的li ul和ol里面的都获取
+    console.log(lis);//HTMLCollection(5) [li, li, li, li, li]
+    console.log(lis.length);//5 数组长度（属性）
+    //获取id为list1下所有li（ul下的li）：先取ul
+    var lis2 = document.getElementById("list1").getElementsByTagName("li");
+    console.log(lis2);//HTMLCollection(3) [li, li, li]
+    console.log(lis2.length);//3
+
+</script>
+</body>
+</html>
